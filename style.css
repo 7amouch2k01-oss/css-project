@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap');
-
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+/* added a google font for better typography */
+:root { 
   color-scheme: dark;
   --bg: #090b16;
   --surface: rgba(13, 16, 34, 0.86);
@@ -13,26 +13,26 @@
   --accent-soft: rgba(34, 197, 255, 0.16);
   --shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
 }
-
+/* defined color variables for consistent theming and easier maintenance */
 * {
   box-sizing: border-box;
+  font: "Roboto", sans-serif;
 }
-
+/* applied a universal selector to set box-sizing to border-box for easier layout management and set the default font to Roboto */
 html {
   scroll-behavior: smooth;
 }
-
+/* enabled smooth scrolling for better user experience when navigating through the page */
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: 'Inter', sans-serif;
   color: var(--text);
   background: radial-gradient(circle at top left, rgba(62, 83, 232, 0.24), transparent 28%),
               radial-gradient(circle at bottom right, rgba(255, 111, 97, 0.18), transparent 22%),
               linear-gradient(180deg, #07090f 0%, #11151f 100%);
   background-attachment: fixed;
 }
-
+/* set the body background to a combination of radial and linear gradients for a visually appealing design, and ensured the background is fixed for a parallax effect */
 body::before {
   content: '';
   position: fixed;
@@ -42,7 +42,7 @@ body::before {
   opacity: 0.3;
   pointer-events: none;
 }
-
+/* added a subtle grid pattern overlay using a pseudo-element for enhanced visual texture without interfering with user interactions */
 header {
   position: fixed;
   inset: 0 0 auto 0;
@@ -53,31 +53,31 @@ header {
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
   padding: 1.3rem 1.5rem;
 }
-
+/* styled the header to be fixed at the top with a semi-transparent background and a blur effect for a modern look, along with a subtle shadow for depth */
 header .title {
   margin: 0;
   text-align: center;
 }
-
+/* centered the header title and removed default margins for better spacing */
 header h1 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin-bottom: 0.35rem;
   font-size: clamp(1.9rem, 2.6vw, 3.2rem);
   letter-spacing: -0.04em;
   color: #fff;
 }
-
+/* styled the main header title with a larger font size that scales with the viewport, and added negative letter-spacing for a tighter look */
 header h2 {
   margin: 0;
   font-size: clamp(1rem, 1.5vw, 1.5rem);
   font-weight: 500;
   color: var(--accent);
 }
-
+/* styled the subheader with a smaller font size that also scales with the viewport, and used the accent color for emphasis */
 nav {
   margin-top: 1.3rem;
 }
-
+/* added margin to the navigation for spacing below the header */
 nav ul {
   list-style: none;
   display: flex;
@@ -87,13 +87,13 @@ nav ul {
   margin: 0;
   padding: 0;
 }
-
+/* styled the navigation list to be a flex container that centers its items, allows wrapping on smaller screens, and has consistent gaps between items */
 nav li {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 999px;
 }
-
+/* styled the navigation list items with a semi-transparent background, a subtle border, and fully rounded corners for a pill-shaped appearance */
 nav a {
   display: inline-block;
   padding: 0.85rem 1.2rem;
@@ -102,14 +102,14 @@ nav a {
   font-weight: 600;
   transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
 }
-
+/* styled the navigation links to be inline-block for better padding control, removed text decoration, and added a transition for smooth hover effects */
 nav a:hover,
 nav a:focus-visible {
   transform: translateY(-2px);
   background: var(--accent-soft);
   color: #ffffff;
 }
-
+/* added hover and focus styles to the navigation links for interactivity, including a slight upward movement, a background color change, and a text color change for better visibility */
 main {
   position: relative;
   z-index: 1;
@@ -119,13 +119,13 @@ main {
   display: grid;
   gap: 2rem;
 }
-
+/* styled the main content area to be centered with a maximum width, and used CSS Grid for layout with consistent gaps between sections */
 #photo {
   display: flex;
   justify-content: center;
   padding: 1rem;
 }
-
+/* styled the photo section to center its content and added padding for spacing */
 #photo img {
   width: min(260px, 100%);
   aspect-ratio: 1 / 1;
@@ -135,7 +135,7 @@ main {
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
   background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
 }
-
+/* styled the profile photo to be circular with a border and shadow for emphasis, and used object-fit to ensure the image covers the area without distortion */
 .sec,
 .tab,
 form,
@@ -146,26 +146,26 @@ form,
   border-radius: 28px;
   box-shadow: var(--shadow);
 }
-
+/* applied a consistent style to sections, tables, forms, videos, and audio elements with a background color, border, rounded corners, and shadow for a cohesive design */
 .sec {
   padding: 2rem;
   text-align: left;
 }
-
+/* styled the sections with padding and left-aligned text for better readability */
 .sec h3 {
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: clamp(1.6rem, 2vw, 2rem);
   color: #ffffff;
 }
-
+/* styled the section headers with a larger font size that scales with the viewport and a bright color for emphasis */
 .sec p {
   margin: 0;
   line-height: 1.85;
   color: var(--muted);
   font-size: 1rem;
 }
-
+/* styled the section paragraphs with no margin, increased line height for readability, a muted color, and a standard font size */
 .vid,
 .aud {
   width: 100%;
@@ -174,11 +174,11 @@ form,
   overflow: hidden;
   border-radius: 22px;
 }
-
+/* styled the video and audio containers to be full width, with no borders, hidden overflow, and rounded corners for a clean look */
 .vid {
   min-height: 360px;
 }
-
+/* set a minimum height for the video container to ensure it has enough space for the video content */
 .vid video,
 .aud audio {
   width: 100%;
